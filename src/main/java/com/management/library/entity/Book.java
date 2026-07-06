@@ -1,7 +1,6 @@
 package com.management.library.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.util.Objects;
 
