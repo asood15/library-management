@@ -5,6 +5,7 @@ import com.management.library.repo.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,9 @@ public class AuthorService {
         author.setName(authorInput.name());
 
         return authorRepository.save(author);
+    }
+
+    public List<Author> searchAuthorByText(String text) {
+        return authorRepository.findAllByNameContainsIgnoreCase(text);
     }
 }
