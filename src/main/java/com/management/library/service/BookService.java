@@ -6,7 +6,6 @@ import com.management.library.entity.BookInput;
 import com.management.library.repo.AuthorRepository;
 import com.management.library.repo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,5 +34,9 @@ public class BookService {
         book.setTitle(bookInput.title());
         book.setAuthor(author);
         return bookRepository.save(book);
+    }
+
+    public List<Book> searchBookByText(String text) {
+        return bookRepository.findAllByTitleContainsIgnoreCase(text);
     }
 }

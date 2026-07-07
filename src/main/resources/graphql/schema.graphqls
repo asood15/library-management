@@ -2,6 +2,7 @@ type Query {
     books: [Book!]!
     book(id:ID!): Book!
     author(id: ID!): Author!
+    search(text: String!): [SearchItem]
 }
 
 type Mutation {
@@ -29,3 +30,5 @@ input BookInput {
 input AuthorInput {
     name: String!
 }
+
+union SearchItem = Author | Book
