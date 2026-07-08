@@ -27,4 +27,8 @@ public class AuthorService {
     public List<Author> searchAuthorByText(String text) {
         return authorRepository.findAllByNameContainsIgnoreCase(text);
     }
+
+    public List<Author> getAuthors() {
+        return authorRepository.findAll();
+    }
 }
