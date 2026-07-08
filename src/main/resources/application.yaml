@@ -6,6 +6,11 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+
   graphql:
     graphiql:
+      enabled: true
+
+  threads:
+    virtual:
       enabled: true
