@@ -11,6 +11,11 @@ spring:
     graphiql:
       enabled: true
 
-  threads:
-    virtual:
-      enabled: true
+#  threads:
+#    virtual:
+#      enabled: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0

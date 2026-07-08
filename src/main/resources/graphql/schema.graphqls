@@ -3,6 +3,8 @@ type Query {
     book(id:ID!): Book!
     author(id: ID!): Author!
     authors:[Author!]!
+    review(id:ID!): Review!
+    reviews(filter: ReviewFilter): [Review]!
     search(text: String!): [SearchItem]
 }
 
@@ -23,6 +25,15 @@ type Author {
     books: [Book!]!
 }
 
+type Review {
+    id: ID!
+    rating: Int!
+    comment: String
+    reviewerName: String!
+    verified: Boolean!
+    book: Book!
+}
+
 input BookInput {
     title: String!
     authorId: ID!
@@ -30,6 +41,12 @@ input BookInput {
 
 input AuthorInput {
     name: String!
+}
+
+input ReviewFilter {
+    rating: Int
+    verified: Boolean
+    reviewerName: String
 }
 
 union SearchItem = Author | Book
