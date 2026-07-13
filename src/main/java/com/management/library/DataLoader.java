@@ -66,37 +66,37 @@ public class DataLoader implements CommandLineRunner {
         Book cloudNative = new Book();
         cloudNative.setTitle("Cloud Native Java");
         cloudNative.setAuthor(josh);
-        bookRepository.save(cloudNative);
+        bookRepository.saveAndFlush(cloudNative);
 
         Book reactiveSpring = new Book();
         reactiveSpring.setTitle("Spring Boot: Up and Running");
         reactiveSpring.setAuthor(mark);
-        bookRepository.save(reactiveSpring);
+        bookRepository.saveAndFlush(reactiveSpring);
 
         Book springBootInAction = new Book();
         springBootInAction.setTitle("Spring Boot in Action");
         springBootInAction.setAuthor(greg);
-        bookRepository.save(springBootInAction);
+        bookRepository.saveAndFlush(springBootInAction);
 
         Book learningSpring = new Book();
         learningSpring.setTitle("Learning Spring Boot 3.0");
         learningSpring.setAuthor(greg);
-        bookRepository.save(learningSpring);
+        bookRepository.saveAndFlush(learningSpring);
 
         Book fundamentals = new Book();
         fundamentals.setTitle("Fundamentals of Software Engineering");
         fundamentals.setAuthor(dan);
-        bookRepository.save(fundamentals);
+        bookRepository.saveAndFlush(fundamentals);
 
         Book springInAction = new Book();
         springInAction.setTitle("Spring in Action");
         springInAction.setAuthor(craig);
-        bookRepository.save(springInAction);
+        bookRepository.saveAndFlush(springInAction);
 
         Book springAiInAction = new Book();
         springAiInAction.setTitle("Spring AI in Action");
         springAiInAction.setAuthor(craig);
-        bookRepository.save(springAiInAction);
+        bookRepository.saveAndFlush(springAiInAction);
 
         return new AuthorsAndBooks(
                 Map.of(
